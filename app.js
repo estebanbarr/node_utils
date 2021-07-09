@@ -1,12 +1,7 @@
 const { argv } = require('./config/yargs');
 
-const atob = require('atob');
-
-const parseJwt = (token) => {
-    const payloadBase64Url = token.split('.')[1];
-    const payloadBase64 = payloadBase64Url.replace('-', '+').replace('_', '/');
-    return JSON.parse(atob(payloadBase64));
-}
+// Funciones...
+const { parseJwt } = require('./functions/jwt');
 
 console.log('==================== UTIL ====================');
 
